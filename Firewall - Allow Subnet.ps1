@@ -1,0 +1,2 @@
+﻿New-NetFirewallRule -RemoteAddress 10.200.1.0/24 -DisplayName "Trusted - Azure Subnet" -Direction inbound -Profile Any -Action Allow
+New-NetFirewallRule -RemoteAddress 192.168.1.0/24 -DisplayName "Trusted - CHI Subnet" -Direction inbound -Profile Any -Action Allow
