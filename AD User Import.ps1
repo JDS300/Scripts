@@ -1,10 +1,10 @@
 ﻿Import-Module ActiveDirectory
 
-$Domain="@transmartinc.com"
+$Domain="@domain.com"
 
-$UserOu="OU=Field Staff,OU=AD Sync Enabled,OU=TranSmart Users,DC=internal,DC=transmartinc,DC=com"
+$UserOu="OU=SomeOU,OU=AD Sync Enabled,OU=Company Users,DC=internal,DC=domain,DC=com"
 
-$NewUsersList=Import-CSV "C:\Scripts\TSMART_OfficeImportOnSite02.csv"
+$NewUsersList=Import-CSV "C:\Scripts\ImportCSV.csv"
 
 ForEach ($User in $NewUsersList) {
 
