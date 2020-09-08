@@ -1,4 +1,4 @@
-﻿$NewUsersList=Import-CSV "C:\Scripts\TSMART-ADUsers_MobilePhone.csv"
+﻿$NewUsersList=Import-CSV "C:\Scripts\Users.csv"
 
 ForEach ($User in $NewUsersList) {
 
