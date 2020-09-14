@@ -1,0 +1,2 @@
+DisplayName,FirstName,LastName,ProxyAddresses,UserPrincipalName
+UserFirstName UserLastName,UserFirstName,UserLastName,"smtp:firstname.lastname@companydomain.onmicrosoft.com,SMTP:flastname@companydomain.com",flastname@companydomain.com
