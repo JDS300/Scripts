@@ -2,6 +2,14 @@
 #run as administrator 
 #SMTP configuration 
 #Found @ https://gallery.technet.microsoft.com/scriptcenter/Monitor-DFS-backlog-and-f2761f16
+
+#Important
+#For the initial replication of existing data on the primary member, the staging folder quota must be large enough so that replication can continue even if multiple large files remain in the staging folder because partners cannot promptly download the files. 
+#To properly size the staging folder for initial replication, you must take into account the size of the files to be replicated. At a minimum, the staging folder quota for servers running Windows Server 2008 should be at least the size of the 32 largest files in the replicated folder, or the 16 largest files for the SYSVOL folder on a read-only domain controller. To improve performance, set the size of the staging folder quota as close as possible to the size of the replicated folder. 
+#To determine the size of the largest files in a replicated folder using Windows Explorer, sort by size and add the 32 largest file sizes (16 if it’s the SYSVOL folder on a read-only domain controller) to get the minimum staging folder size. To get the recommended minimum staging folder size (in gigabytes) from a Windows PowerShell® command prompt, use this Windows PowerShell command where <replicatedfolderpath> is the path to the replicated folder (change 32 to 16 for read-only replicated folders): 
+#Run this to set the Determine Largest Files:
+#(Get-ChildItem <replicatedfolderpath>-recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length -sum).sum /1gb
+
 $EmailFrom = "alerts@mydomain.ca" 
 $EmailTo = "alerts@mydomain.ca" 
 $EmailTo1 = "daniel@mydomain.ca" 
