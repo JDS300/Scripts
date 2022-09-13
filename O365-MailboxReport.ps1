@@ -1,0 +1,1 @@
+$mailboxes = Get-Mailbox -resultSize unlimited | $mailboxes | foreach { Get-User $_ | select FirstName, LastName, DisplayName, WindowsEmailAddress } | export-csv -NoTypeInformation .\Mailboxes.csv -Delimiter ";" -Encoding unicode
